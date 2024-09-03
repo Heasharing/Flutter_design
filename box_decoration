@@ -1,0 +1,174 @@
+import 'package:flutter/material.dart';
+void main (){
+  runApp(Home());
+}
+class Home extends StatelessWidget {
+  const Home({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: HomeScreen(),
+    );
+  }
+}
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      drawer: Drawer(
+        child: Column(
+          children: [
+            Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4CK8JotmDXKFp9CRdwf5J06VFbgY_BENmnw&s',
+            fit: BoxFit.cover,
+            width: MediaQuery.of(context).size.width,
+            ),
+            ListTile(
+            leading: Icon(Icons.home),
+              title: Text('Home'),
+              trailing: Icon(Icons.arrow_forward_ios),
+            ),
+            Divider(
+
+            ),
+            ListTile(
+            leading: Icon(Icons.person),
+              title: Text('Profile'),
+              trailing: Icon(Icons.arrow_forward_ios),
+
+            ),
+            ListTile(
+              leading: Icon(Icons.notifications),
+              title: Text('Notification'),
+              trailing: Icon(Icons.arrow_forward_ios),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Setting'),
+              trailing: Icon(Icons.arrow_forward_ios),
+            ),
+            Spacer(),
+            ListTile(
+              leading: Icon(Icons.logout_sharp),
+              title: Text('Logout'),
+
+              trailing: Icon(Icons.arrow_forward_ios),
+            )
+          ],
+
+        ),
+      ),
+      appBar: AppBar(
+        title: Text('Flutter'),
+        centerTitle: false,
+        backgroundColor: Colors.redAccent,
+        actions: [
+          IconButton(onPressed: () {}, icon: Icon(Icons.notifications)),
+          IconButton(onPressed: () {}, icon: Icon(Icons.settings))
+
+
+        ],
+      ),
+      // body:Center(
+      //   child:Container(
+      //   decoration: BoxDecoration(
+      //     color: Colors.pink,
+      //     borderRadius: BorderRadius.circular(20)
+      // ),
+      //   alignment: Alignment.center,
+      //   width: MediaQuery.of(context).size.width *0.9,
+      //   height: MediaQuery.of(context).size.height *0.3,
+      //   child: Row(
+      //     crossAxisAlignment: CrossAxisAlignment.center,
+      //     children:[
+      //       Container(
+      //         padding: EdgeInsets.only(left: 10),
+      //       width: MediaQuery.of(context).size.width * 0.5,
+      //       child: Column(
+      //         mainAxisAlignment: MainAxisAlignment.center,
+      //       children: [
+      //         Text('Welcome to Design Flutter ',
+      //         style: TextStyle(
+      //           fontSize: 20,
+      //           fontWeight: FontWeight.bold,
+      //         ),
+      //         ),
+      //         Text('Flutter Casual Games Toolkit Free & open source multiplatform 2D game development in Flutter',
+      //         style: TextStyle(
+      //           color: Colors.brown,
+      //         ),
+      //         ),
+      //       ],
+      //       )),
+      //       Expanded(child: Image.network('https://cdn.pixabay.com/photo/2024/05/15/01/13/cat-8762411_640.png')
+      //       )
+      //     ],
+      //   ),
+      // ),
+      // ),
+       body: Center(
+         child:Material(
+           elevation: 10,
+         shadowColor: Colors.grey,
+         borderRadius: BorderRadius.circular(20),
+         child: Container(
+           decoration: BoxDecoration(
+             color: Colors.pink,
+             borderRadius: BorderRadius.circular(20),
+               boxShadow: [
+                 BoxShadow(
+                   color: Colors.grey,
+                   offset: Offset(0,2),
+                   blurRadius: 10,
+                  spreadRadius: 3,
+                 ),
+
+               ]
+
+           ),
+           width: MediaQuery.of(context).size.width*0.9,
+           height: MediaQuery.of(context).size.height*0.3,
+           child: Row(
+             crossAxisAlignment: CrossAxisAlignment.center,
+             children: [
+                  Container(
+                    padding: EdgeInsets.only(left: 20),
+                    width: MediaQuery.of(context).size.width*0.5,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                      Text('Welcome to Design Flutter ',
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              ),
+                        Text('Flutter Casual Games Toolkit Free & open source multiplatform 2D game development in Flutter',
+                          style: TextStyle(
+                            color:Colors.grey,
+                          ),
+                        ),
+
+                      ],
+                    ),
+                  ),
+               Expanded(child:Image.network('https://cdn.pixabay.com/photo/2024/05/15/01/13/cat-8762411_640.png')),
+
+
+             ],
+           ),
+         ),
+         ),
+       ),
+    );
+
+  }
+}
+

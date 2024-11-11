@@ -1,0 +1,38 @@
+void main(){
+   Employee employee =Employee();
+  employee.register(fullName:"HeaHom",gender:"Male",address:"phnom penh",phone:"018644");
+  User user =User();
+  user.phone=employee.phone;
+   user.address=employee.address;
+   user.gender=employee.gender;
+  
+  user.registerUser(email:"mari@gmail.com",password:"123");
+  print("${user.address}");
+}
+class Employee{
+   String? fullName;
+    String? gender;
+    String? address;
+    String? phone;
+  void register({required String fullName,required String gender,required String address,required String phone}){
+  this.fullName=fullName;
+  this.gender=gender;
+  this.address=address;
+  this.phone=phone;
+}
+}
+
+class User extends Employee{
+  String?email;
+  String? password;
+  void login({required String email,required String password}){
+    this.email=email;
+    this.password=password;
+  }
+  void registerUser({required String email,required String password}){
+    this.email=email;
+    this.password=password;
+    
+  }
+}
+
